@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: docker-compose up
       env:
-        COMPOSE_INTERACTIVE_NO_CLI: 1
+        COMPOSE_INTERACTIVE_NO_CLI: 0
       run: docker-compose up -d
     - name: Check running containers
       run: docker-compose ps -a
@@ -17,5 +17,5 @@ jobs:
       run: docker-compose logs app
     - name: Test with pytest
       env:
-        COMPOSE_INTERACTIVE_NO_CLI: 1
+        COMPOSE_INTERACTIVE_NO_CLI: 0
       run: docker-compose exec app pytest
