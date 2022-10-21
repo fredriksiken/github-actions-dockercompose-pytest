@@ -14,4 +14,4 @@ jobs:
     - name: Check logs
       run: docker-compose logs app
     - name: Test with pytest
-      run: docker-compose exec -t app pytest
+      run: docker-compose exec app pytest
